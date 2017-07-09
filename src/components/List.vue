@@ -5,7 +5,7 @@
       <div class v-for='day in list'>
         <h2>{{ day.day }}</h2>
         <div v-for='time in day.events'>
-          <h3>{{ formatTime(time.startTime) }}</h3>
+          <!--<h3>{{ formatTime(time.startTime) }}</h3>-->
           <ul>
             <li v-for='event in time.eventList'>
               <div class='title'>
