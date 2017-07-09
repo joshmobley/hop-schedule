@@ -1,0 +1,31 @@
+.container {
+  min-height: calc(100vh - 2em - 50px);
+  padding: 5px;
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tiles div {
+  flex-basis: calc(50% - 10px);
+  padding: 1em;
+  margin: 5px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.title {
+  background: #fff;
+}
+
+.speaker img {
+  float: left;
+  margin-right: 20px;
+}
+
+.venue img {
+  float: left;
+  margin-right: 20px;
+}

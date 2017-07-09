@@ -1,0 +1,23 @@
+<app-map></app-map>
+<div
+  class="day"
+  *ngFor="let day of events">
+  <h1>{{ day.day }}</h1>
+  <div
+    class="time"
+    *ngFor="let time of day.events">
+    <a
+      class="event"
+      *ngFor="let event of time.eventList"
+      [routerLink]="['/event',event.id]">
+      <div class="title">
+        <h2>{{ event.title }}</h2>
+        <p *ngIf="event.speaker">{{ event.speaker.name }}</p>
+      </div>
+      <div class="location">
+        <p>{{ event.location }}</p>
+        <p>{{ formatTime(event.startTime) }}</p>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+[{
+  "day": "Wednesday",
+  "events": [{
+    "startTime": "18:00",
+    "eventList": [{
+      "title": "Welcome Party",
+      "location": "Market Hall",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "id": "1"
+    }]
+  }]
+}, {
+  "day": "Thursday",
+  "events": [{
+    "startTime": "08:30",
+    "eventList": [{
+      "title": "Breakfast Welcome",
+      "location": "Market Hall",
+      "startTime": "08:30",
+      "endTime": "09:30",
+      "id": "2"
+    }]
+  }, {
+    "startTime": "09:30",
+    "eventList": [{
+      "title": "Design Morale Compass",
+      "speaker": {
+        "name": "Dan Parham",
+        "slug": "dan-parham"
+      },
+      "location": "Raleigh Convention Center",
+      "startTime": "09:30",
+      "endTime": "10:30",
+      "id": "3"
+    }]
+  }, {
+    "startTime": "10:30",
+    "eventList": [{
+      "title": "Movement - When to Lead, When to Follow",
+      "speaker": {
+        "name": "Jacinda Walker",
+        "slug": "jacinda-walker"
+      },
+      "location": "Raleigh Convention Center",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "id": "4"
+    }]
+  }, {
+    "startTime": "12:00",
+    "eventList": [{
+      "title": "Lunch Event",
+      "location": "Market Hall",
+      "startTime": "12:00",
+      "endTime": "12:45",
+      "id": "5"
+    }]
+  }, {
+    "startTime": "13:00",
+    "eventList": [{
+      "title": "Future of Museums",
+      "speaker": {
+        "name": "Larry Wheeler",
+        "slug": "larry-wheeler"
+      },
+      "location": "Marbles",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "id": "6"
+    }, {
+      "title": "Designing the World&rsquo;s School for Social Innovation",
+      "speaker": {
+        "name": "Jo-Ann Tan",
+        "slug": "joann-tan"
+      },
+      "location": "Nash Hall",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "id": "7"
+    }]
+  }, {
+    "startTime": "13:30",
+    "eventList": [{
+      "title": "Building Design Teams",
+      "speaker": {
+        "name": "Josh Silverman",
+        "slug": "josh-silverman"
+      },
+      "location": "Market Hall",
+      "startTime": "13:30",
+      "endTime": "14:00",
+      "id": "8"
+    }]
+  }, {
+    "startTime": "14:00",
+    "eventList": [{
+      "title": "TBD",
+      "speaker": {
+        "name": "Lamar Haywood",
+        "slug": "lamar-haywood"
+      },
+      "location": "Marbles",
+      "startTime": "14:00",
+      "endTime": "14:30",
+      "id": "9"
+    }, {
+      "title": "TBD",
+      "speaker": {
+        "name": "Kristin Lueke",
+        "slug": "kristin-lueke"
+      },
+      "location": "Nash Hall",
+      "startTime": "14:00",
+      "endTime": "14:30",
+      "id": "10"
+    }]
+  }, {
+    "startTime": "14:30",
+    "eventList": [{
+      "title": "Headspace",
+      "speaker": {
+        "name": "Anna Charity",
+        "slug": "anna-charity"
+      },
+      "location": "Market Hall",
+      "startTime": "14:30",
+      "endTime": "15:00",
+      "id": "11"
+    }]
+  }]
+}]
