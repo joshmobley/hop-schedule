@@ -1,23 +1,19 @@
 <app-map></app-map>
 <div
   class="day"
-  *ngFor="let day of events">
-  <h1>{{ day.day }}</h1>
-  <div
-    class="time"
-    *ngFor="let time of day.events">
-    <a
-      class="event"
-      *ngFor="let event of time.eventList"
-      [routerLink]="['/event',event.id]">
+  *ngFor="let event of events">
+    <a class="event" [routerLink]="['event', event.slug]">
       <div class="title">
-        <h2>{{ event.title }}</h2>
-        <p *ngIf="event.speaker">{{ event.speaker.name }}</p>
+        <h2>{{ event.title.rendered }}</h2>
+        <p *ngIf="event.acf.lineup">
+          <span *ngFor="let name of event.acf.lineup">
+              {{ name.person.title }}
+          </span>
+        </p>
       </div>
       <div class="location">
-        <p>{{ event.location }}</p>
-        <p>{{ formatTime(event.startTime) }}</p>
+        <p>{{ event.acf.venue.post_title }}</p>
+        <p>{{ formatTime(event.acf.time) }}</p>
       </div>
     </a>
-  </div>
 </div>

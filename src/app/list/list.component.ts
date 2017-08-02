@@ -4,8 +4,7 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
-  providers: [DataService]
+  styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
 
@@ -16,8 +15,8 @@ export class ListComponent implements OnInit {
   fetchData() {
     this.dataService.getEvents().subscribe(
       res => {
-        this.events = res.json();
-        console.log(this.events);
+        this.events = res;
+        console.log(res);
       }
     );
   }
