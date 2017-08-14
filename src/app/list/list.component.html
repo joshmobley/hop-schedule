@@ -1,19 +1,25 @@
-<app-map></app-map>
-<div
-  class="day"
-  *ngFor="let event of events">
-    <a class="event" [routerLink]="['event', event.slug]">
-      <div class="title">
-        <h2>{{ event.title.rendered }}</h2>
-        <p *ngIf="event.acf.lineup">
-          <span *ngFor="let name of event.acf.lineup">
-              {{ name.person.title }}
-          </span>
-        </p>
-      </div>
-      <div class="location">
-        <p>{{ event.acf.venue.post_title }}</p>
-        <p>{{ formatTime(event.acf.time) }}</p>
-      </div>
-    </a>
-</div>
+
+  <h1>Schedule</h1>
+  <div class="tabs">
+    <a routerLink="/schedule/thursday" routerLinkActive="active">Thursday</a>
+    <a routerLink="/schedule/friday" routerLinkActive="active">Friday</a>
+  </div>
+  <div class="events">
+    <ng-container *ngFor="let event of events; let i = index;">
+        <span *ngIf="newTime(i)" class="break-flex"></span>
+        <a class="event" [routerLink]="['/event', event.slug]" [style.backgroundColor]="setColor(i)">
+          <div class="title">
+            <h2 [innerHTML]="event.title.rendered"></h2>
+            <p *ngIf="event.acf.lineup">
+              <span *ngFor="let name of event.acf.lineup">
+                  {{ name.person.title }}
+              </span>
+            </p>
+          </div>
+          <div class="location">
+            <h5>{{ event.acf.label }}</h5>
+            <p>{{ formatTime(event.acf.start_time) }} - {{ formatTime(event.acf.end_time) }} / {{ event.acf.venue.post_title }}</p>
+          </div>
+        </a>
+    </ng-container>
+  </div>

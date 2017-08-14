@@ -1,24 +1,43 @@
-<app-map></app-map>
 <div class="container" *ngIf="events">
+  <a routerLink="/schedule" class="back-link">Back to Schedule</a>
   <ng-container *ngFor="let event of events">
-  <div class="tiles">
-    <div class="title">
-      <h1>{{ event.title.rendered }}</h1>
-      <span [innerHtml]="event.acf.description"></span>
-    </div>
-    <div class="speaker">
-      <div *ngFor="let lineup of event.acf.lineup">
-        <img src="http://placehold.it/150x150" />
-        <h1>{{ lineup.person.post_title }}</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <div class="tiles">
+      <div class="title">
+        <h2>What</h2>
+        <h3 [innerHTML]="event.title.rendered"></h3>
+        <div [innerHTML]="event.acf.description" class="description"></div>
+      </div>
+
+      <div class="speaker" *ngIf="lineup">
+        <h2>Who</h2>
+        <div *ngFor="let item of lineup" class="profile">
+          <img [src]="item.acf.image.sizes['400']" />
+          <h3 [innerHTML]="item.title.rendered"></h3>
+          <p>{{ item.acf.job_title }}</p>
+          <p>{{ item.acf.organization }}</p>
+          <div class="excerpt" [innerHTML]="(item.acf.bio | slice:0:300) + '...'"></div>
+          <a [routerLink]="['/lineup',item.slug]" class="button">Full Bio</a>
+        </div>
+      </div>
+
+      <div class="time">
+        <h2>When</h2>
+        <p>{{ event.acf.day.value }} - {{ event.acf.start_time }} - {{ event.acf.end_time }}</p>
+      </div>
+
+
+      <div class="venue" *ngIf="venue">
+        <h2>Where</h2>
+        <ng-container *ngFor="let item of venue">
+          <img [src]="item.acf.curbside_image.sizes['400']" />
+          <h3 [innerHTML]="item.title.rendered"></h3>
+          <p>{{ item.acf.address.address }}</p>
+          <div class="button-container">
+          <!--<a [href]="'https://www.google.com/maps/search/?api=1&query=' + item.acf.address.address" target="_blank" class="button">Get Directions</a>-->
+          <a [routerLink]="" class="button">Explore</a>
+          </div>
+        </ng-container>
       </div>
     </div>
-    <div class="venue">
-      <img src="http://placehold.it/300x200" />
-      <h1>Venue Name</h1>
-      <p>123 Easy Street<br/>
-      Raleigh, NC 27606</p>
-    </div>
-  </div>
   </ng-container>
 </div>
